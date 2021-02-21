@@ -16,7 +16,7 @@ For the functionality that is demonstrated above, there are two main classes:
 
 SegmentedButtonsView and MainViewController.
 
-for instatnce in the code below:
+for instance in the code below:
 
 ```swift
 lazy var segmentedButtonsView:SegmentedButtonsView = {
