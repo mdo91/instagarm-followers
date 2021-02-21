@@ -20,8 +20,8 @@ For the functionality that is demonstrated above, there are two main classes:
 
 ```swift
 lazy var segmentedButtonsView:SegmentedButtonsView = {
-   let collectionViewHeader = SegmentedButtonsView()
-    collectionViewHeader.setLablesTitles(titles: ["Followers", "Following"])
+   let segmentedButtonsView = SegmentedButtonsView()
+    segmentedButtonsView.setLablesTitles(titles: ["Followers", "Following"])
     return collectionViewHeader
 }()
 ```
@@ -43,6 +43,30 @@ extension MainViewController: SegmentedControlDelegate{
 
         }
     }
+}
+```
+
+If you're willing to use segmentedViewButtons to be integrated with a collection view with more than 2 buttons, you can replace the code inside the 'collectionViewDidScroll' delegate function of 'SegmentedButtonsView.swift' :
+
+```swift
+if  (lable.frame.width / 2  >= self.selectorView.frame.origin.x && titles[0] == lable.text! ||
+     lable.frame.width / 2  <= self.selectorView.frame.origin.x && titles[1] == lable.text! ) {
+                            
+      lable.textColor = selectorTextColor
+                            
+    }else{
+
+        lable.textColor = textColor
+}
+
+```
+with the following code that supports more than two buttons(lables) view:
+
+```swift
+if lable.frame.origin.x == self.selectorView.frame.origin.x{
+    lable.textColor = selectorTextColor
+}else{
+    lable.textColor = textColor
 }
 ```
 
