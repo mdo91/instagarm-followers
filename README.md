@@ -18,13 +18,13 @@ The app is created programmatically using UIKit with no storyboards. However, if
 
   for instance in the code below:
 
-      ```swift
-      lazy var segmentedButtonsView:SegmentedButtonsView = {
-         let collectionViewHeader = SegmentedButtonsView()
-          collectionViewHeader.setLablesTitles(titles: ["Followers", "Following"])
-          return collectionViewHeader
-      }()
-      ```
+```swift
+lazy var segmentedButtonsView:SegmentedButtonsView = {
+   let collectionViewHeader = SegmentedButtonsView()
+    collectionViewHeader.setLablesTitles(titles: ["Followers", "Following"])
+    return collectionViewHeader
+}()
+```
    Please consider to call 'setLablesTitles' method of 'SegmentedButtonsView' instance in order to set lables titles.
 
 4.in your viewController make it conforms to 'SegmentedControlDelegate' in order to trigger selected button index
