@@ -12,7 +12,7 @@ The app is created programmatically using UIKit with no storyboards. However, if
 2. Drop a UIView in your UIViewController.
 3. Select the UIView, then in the identity inspector write in the custom class textfield 'SegmentedButtonsView' then hit enter.
 
-4.For the functionality that is demonstrated above, there are two main classes: 
+For the functionality that is demonstrated above, there are two main classes: 
 
   SegmentedButtonsView and MainViewController.
 
@@ -25,8 +25,27 @@ lazy var segmentedButtonsView:SegmentedButtonsView = {
     return collectionViewHeader
 }()
 ```
-   Please consider to call 'setLablesTitles' method of 'SegmentedButtonsView' instance in order to set lables titles.
+Please consider to call 'setLablesTitles' method of 'SegmentedButtonsView' instance in order to set lables titles.
+In your viewController make it conforms to 'SegmentedControlDelegate' in order to trigger selected button index:
 
-4.in your viewController make it conforms to 'SegmentedControlDelegate' in order to trigger selected button index
+```swift
+extension MainViewController: SegmentedControlDelegate{
+
+    //MARK: - segmented Controller delegate
+    
+    func didIndexChanged(at index: Int) {
+
+       
+        if index == 0 {
+        // do something
+    
+        }else if index == 1 {
+        //do something
+
+        }
+    }
+   
+}
+```
 
 
