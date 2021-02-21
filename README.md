@@ -43,8 +43,8 @@ extension MainViewController: SegmentedControlDelegate{
 
         }
     }
-   
 }
 ```
+
 
 
