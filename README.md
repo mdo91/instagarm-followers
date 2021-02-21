@@ -6,17 +6,25 @@ The ios app demonstrates animated segmented buttons that are integrated with col
 
 ### usage:
 
-The app is created using UIKit with no storyboards. However, if you are using storyboards in your project, drop a UIView in your UIViewController, select the UIView, then in the identity inspector write in the custom class textfield 'SegmentedButtonsView' then hit enter.
+The app is created programmatically using UIKit with no storyboards. However, if you are using storyboards in your project:
 
-for the functionality that is demonstrated above, there are two main classes: SegmentedButtonsView and MainViewController.
+1. Import 'SegmentedButtonsViewdrop.swift' file into your project.
+2. Drop a UIView in your UIViewController.
+3. Select the UIView, then in the identity inspector write in the custom class textfield 'SegmentedButtonsView' then hit enter.
+
+For the functionality that is demonstrated above, there are two main classes: 
+
+SegmentedButtonsView and MainViewController.
 
 for instatnce in the code below:
 
 ```swift
-    lazy var segmentedButtonsView:SegmentedButtonsView = {
-       let collectionViewHeader = SegmentedButtonsView()
-        collectionViewHeader.setLablesTitles(titles: ["Followers", "Following"])
-        return collectionViewHeader
-    }()
+lazy var segmentedButtonsView:SegmentedButtonsView = {
+   let collectionViewHeader = SegmentedButtonsView()
+    collectionViewHeader.setLablesTitles(titles: ["Followers", "Following"])
+    return collectionViewHeader
+}()
 ```
+Please consider to call 'setLablesTitles' method of 'SegmentedButtonsView' instance in order to set lables titles.
+
 
