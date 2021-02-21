@@ -31,11 +31,10 @@ In your viewController make it conforms to 'SegmentedControlDelegate' in order t
 ```swift
 extension MainViewController: SegmentedControlDelegate{
 
-    //MARK: - segmented Controller delegate
+    //MARK: - segmented Control delegate
     
     func didIndexChanged(at index: Int) {
 
-       
         if index == 0 {
         // do something
     
