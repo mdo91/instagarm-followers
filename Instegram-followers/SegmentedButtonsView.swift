@@ -16,7 +16,7 @@ protocol SegmentedControlDelegate:class{
     func didIndexChanged(at index: Int)
 }
 
-class CollectionViewHeader:UIView, CollectionViewDidScrollDelegate{
+class SegmentedButtonsView:UIView, CollectionViewDidScrollDelegate{
  
   
    
@@ -45,7 +45,8 @@ class CollectionViewHeader:UIView, CollectionViewDidScrollDelegate{
     //MARK: - config selected Tap
     
     private func configSelectedTap(){
-        let selectorWidth = self.frame.width / 2
+        let segmentsCount = CGFloat(titles.count)
+        let selectorWidth = self.frame.width / segmentsCount
         selectorView = UIView(frame: CGRect(x: 0, y: self.frame.height - 0.8, width: selectorWidth, height: 0.5))
         selectorView.backgroundColor = .black
         addSubview(selectorView)
@@ -111,7 +112,7 @@ class CollectionViewHeader:UIView, CollectionViewDidScrollDelegate{
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         stackView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         stackView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-       // stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+       
         
     }
     
@@ -132,19 +133,14 @@ class CollectionViewHeader:UIView, CollectionViewDidScrollDelegate{
                 UIView.animate(withDuration: 0.1) {
                     self.selectorView.frame.origin.x = selectorPosition
                 }
-             
-                
             }
         }
-        
     }
-
 }
-extension CollectionViewHeader{
+extension SegmentedButtonsView{
     
     func collectionViewDidScroll(for x: CGFloat) {
-        
-       
+
         UIView.animate(withDuration: 0.1) { [self] in
             self.selectorView.frame.origin.x = x
             
@@ -167,12 +163,13 @@ extension CollectionViewHeader{
                         if  (lable.frame.width / 2  >= self.selectorView.frame.origin.x && titles[0] == lable.text! || lable.frame.width / 2  <= self.selectorView.frame.origin.x && titles[1] == lable.text! ) {
                             
                             lable.textColor = selectorTextColor
+                            
                         }else{
+                            
                             lable.textColor = textColor
                         }
                         
                     }
-                    
                 }
             }
     

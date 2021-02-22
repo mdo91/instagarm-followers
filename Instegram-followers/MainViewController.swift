@@ -12,14 +12,18 @@ class MainViewController: UIViewController {
     
     //MARK: - properties
     
-    lazy var collectionViewHeader:CollectionViewHeader = {
-       let collectionViewHeader = CollectionViewHeader()
-        collectionViewHeader.setLablesTitles(titles: ["Followers", "Following"])
-        collectionViewHeader.translatesAutoresizingMaskIntoConstraints = false
-        collectionViewHeader.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
-        collectionViewHeader.layer.borderColor = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 1).cgColor
-        collectionViewHeader.layer.borderWidth = 0.5
-        return collectionViewHeader
+    lazy var segmentedButtonsView:SegmentedButtonsView = {
+        
+       let segmentedButtonsView = SegmentedButtonsView()
+        
+        segmentedButtonsView.setLablesTitles(titles: ["Followers", "Following"])
+        segmentedButtonsView.translatesAutoresizingMaskIntoConstraints = false
+        segmentedButtonsView.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
+        segmentedButtonsView.layer.borderColor = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 1).cgColor
+        segmentedButtonsView.layer.borderWidth = 0.5
+        
+        return segmentedButtonsView
+        
     }()
     
     lazy var collectionView:UICollectionView = {
@@ -67,14 +71,14 @@ class MainViewController: UIViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        collectionViewHeader.segmentedControlDelegate = self
-        view.addSubview(collectionViewHeader)
+        segmentedButtonsView.segmentedControlDelegate = self
+        view.addSubview(segmentedButtonsView)
         
-        collectionViewHeader.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        collectionViewHeader.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        collectionViewHeader.topAnchor.constraint(equalTo: view.topAnchor,constant: 86).isActive = true
+        segmentedButtonsView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        segmentedButtonsView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        segmentedButtonsView.topAnchor.constraint(equalTo: view.topAnchor,constant: 86).isActive = true
 
-        collectionViewHeader.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        segmentedButtonsView.heightAnchor.constraint(equalToConstant: 40).isActive = true
 
        
         
@@ -82,7 +86,7 @@ class MainViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        collectionView.topAnchor.constraint(equalTo: collectionViewHeader.bottomAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: segmentedButtonsView.bottomAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         collectionView.backgroundColor = .white
         
@@ -131,12 +135,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
-    
-
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
        
-        delegate = collectionViewHeader
+        delegate = segmentedButtonsView
         delegate?.collectionViewDidScroll(for: scrollView.contentOffset.x / 2)
     }
     
@@ -146,10 +148,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDelegate
         collectionView.setContentOffset(CGPoint(x: scrollOffset, y: collectionView.contentOffset.y), animated: true)
         
     }
-
- 
-    
-    
 }
 extension MainViewController: SegmentedControlDelegate{
 
@@ -177,7 +175,6 @@ extension MainViewController: SegmentedControlDelegate{
         let frame: CGRect = CGRect(x : contentOffset ,y : self.collectionView.contentOffset.y ,width : self.collectionView.frame.width,height : self.collectionView.frame.height)
         self.collectionView.scrollRectToVisible(frame, animated: true)
     }
-
-    
+   
 }
 

@@ -14,7 +14,7 @@
 		54510A5325DD04E000166FD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54510A5225DD04E000166FD0 /* Assets.xcassets */; };
 		54510A5625DD04E000166FD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54510A5425DD04E000166FD0 /* LaunchScreen.storyboard */; };
 		54510A6525DD159300166FD0 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54510A6425DD159300166FD0 /* CollectionViewCell.swift */; };
-		5456987E25DD384400A559A6 /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5456987D25DD384400A559A6 /* CollectionViewHeader.swift */; };
+		5456987E25DD384400A559A6 /* SegmentedButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5456987D25DD384400A559A6 /* SegmentedButtonsView.swift */; };
 		54A300C125E1468400EE30A0 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A300C025E1468400EE30A0 /* SearchTableViewCell.swift */; };
 		54A300C425E1C49C00EE30A0 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A300C325E1C49C00EE30A0 /* UserTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +29,7 @@
 		54510A5525DD04E000166FD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54510A5725DD04E000166FD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54510A6425DD159300166FD0 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		5456987D25DD384400A559A6 /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
+		5456987D25DD384400A559A6 /* SegmentedButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedButtonsView.swift; sourceTree = "<group>"; };
 		54A300C025E1468400EE30A0 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		54A300C325E1C49C00EE30A0 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,13 +67,13 @@
 				54510A4925DD04DD00166FD0 /* AppDelegate.swift */,
 				54510A4B25DD04DD00166FD0 /* SceneDelegate.swift */,
 				54510A4D25DD04DD00166FD0 /* MainViewController.swift */,
+				5456987D25DD384400A559A6 /* SegmentedButtonsView.swift */,
 				54510A4F25DD04DD00166FD0 /* Main.storyboard */,
 				54510A5225DD04E000166FD0 /* Assets.xcassets */,
 				54510A5425DD04E000166FD0 /* LaunchScreen.storyboard */,
 				54510A5725DD04E000166FD0 /* Info.plist */,
-				54510A6425DD159300166FD0 /* CollectionViewCell.swift */,
-				5456987D25DD384400A559A6 /* CollectionViewHeader.swift */,
 				54A300C025E1468400EE30A0 /* SearchTableViewCell.swift */,
+				54510A6425DD159300166FD0 /* CollectionViewCell.swift */,
 				54A300C325E1C49C00EE30A0 /* UserTableViewCell.swift */,
 			);
 			path = "Instegram-followers";
@@ -152,7 +152,7 @@
 				54510A4E25DD04DD00166FD0 /* MainViewController.swift in Sources */,
 				54510A4A25DD04DD00166FD0 /* AppDelegate.swift in Sources */,
 				54A300C425E1C49C00EE30A0 /* UserTableViewCell.swift in Sources */,
-				5456987E25DD384400A559A6 /* CollectionViewHeader.swift in Sources */,
+				5456987E25DD384400A559A6 /* SegmentedButtonsView.swift in Sources */,
 				54A300C125E1468400EE30A0 /* SearchTableViewCell.swift in Sources */,
 				54510A6525DD159300166FD0 /* CollectionViewCell.swift in Sources */,
 				54510A4C25DD04DD00166FD0 /* SceneDelegate.swift in Sources */,

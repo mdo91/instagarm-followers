@@ -48,9 +48,7 @@ class SearchTableViewCell:UITableViewHeaderFooterView, UITextFieldDelegate, UISe
         searchTextField.topAnchor.constraint(equalTo: topAnchor,constant: 8).isActive = true
         searchTextField.rightAnchor.constraint(equalTo: rightAnchor,constant: -8).isActive = true
         searchTextField.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -8).isActive = true
-        
-        
-        
+     
     }
 
     
