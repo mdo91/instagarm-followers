@@ -21,7 +21,7 @@ class SegmentedButtonsView:UIView, CollectionViewDidScrollDelegate{
     //MARK: - properties
     
     lazy var selectorView = UIView()
-    lazy var lables = [UILabel]()
+    lazy var labels = [UILabel]()
     private var titles: [String]!
     var textColor = UIColor.lightGray
     var selectorTextColor = UIColor.black
@@ -60,32 +60,32 @@ class SegmentedButtonsView:UIView, CollectionViewDidScrollDelegate{
         updateView()
     }
     
-    //MARK: - create lables
+    //MARK: - create labels
     
     private func createLabels(){
         
-        lables.removeAll()
+        labels.removeAll()
         subviews.forEach({$0.removeFromSuperview()})
-        for lableTitle in titles{
+        for labelTitle in titles{
             
-            let lable = UILabel()
-            lable.font = UIFont.systemFont(ofSize: 18)
-            lable.text = lableTitle
-            let tapGestureRecognizor = UITapGestureRecognizer(target: self, action: #selector(lableActionHandler(sender:)))
+            let label = UILabel()
+            label.font = UIFont.systemFont(ofSize: 18)
+            label.text = labelTitle
+            let tapGestureRecognizor = UITapGestureRecognizer(target: self, action: #selector(labelActionHandler(sender:)))
             tapGestureRecognizor.numberOfTapsRequired = 1
-            lable.addGestureRecognizer(tapGestureRecognizor)
-            lable.isUserInteractionEnabled = true
+            label.addGestureRecognizer(tapGestureRecognizor)
+            label.isUserInteractionEnabled = true
             
-            lable.textColor = textColor
-            lable.textAlignment = .center
-            lables.append(lable)
+            label.textColor = textColor
+            label.textAlignment = .center
+            labels.append(label)
         }
-        lables[0].textColor = selectorTextColor
+        labels[0].textColor = selectorTextColor
     }
     
-    //MARK: - set lables titles
+    //MARK: - set labels titles
     
-    func setLablesTitles(titles:[String]){
+    func setLabelsTitles(titles:[String]){
         
         self.titles = titles
         self.updateView()
@@ -95,7 +95,7 @@ class SegmentedButtonsView:UIView, CollectionViewDidScrollDelegate{
     //MARK: - config stackView
     
     private func configStackView(){
-        let stackView = UIStackView(arrangedSubviews: lables)
+        let stackView = UIStackView(arrangedSubviews: labels)
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
@@ -111,15 +111,15 @@ class SegmentedButtonsView:UIView, CollectionViewDidScrollDelegate{
 
     //MARK: - handler
     
-    @objc private func lableActionHandler(sender:UITapGestureRecognizer){
+    @objc private func labelActionHandler(sender:UITapGestureRecognizer){
         
      
-        for (lableIndex, lbl) in lables.enumerated() {
+        for (labelIndex, lbl) in labels.enumerated() {
             
        
             if lbl == sender.view{
-                let selectorPosition = frame.width / CGFloat(titles.count) * CGFloat(lableIndex)
-                selectedIndex = lableIndex
+                let selectorPosition = frame.width / CGFloat(titles.count) * CGFloat(labelIndex)
+                selectedIndex = labelIndex
                 //todo set delegate
                 segmentedControlDelegate?.didIndexChanged(at: selectedIndex)
                 UIView.animate(withDuration: 0.1) {
@@ -145,20 +145,20 @@ extension SegmentedButtonsView{
                     guard let stack = view as? UIStackView else { return }
                     
               
-                    for (_,lable) in stack.arrangedSubviews.enumerated(){
+                    for (_,label) in stack.arrangedSubviews.enumerated(){
                    
-                        guard let lable = lable as? UILabel else {
+                        guard let label = label as? UILabel else {
                             print("Error ")
                             return
                         }
                         
-                        if  (lable.frame.width / 2  >= self.selectorView.frame.origin.x && titles[0] == lable.text! || lable.frame.width / 2  <= self.selectorView.frame.origin.x && titles[1] == lable.text! ) {
+                        if  (label.frame.width / 2  >= self.selectorView.frame.origin.x && titles[0] == label.text! || label.frame.width / 2  <= self.selectorView.frame.origin.x && titles[1] == label.text! ) {
                             
-                            lable.textColor = selectorTextColor
+                            label.textColor = selectorTextColor
                             
                         }else{
                             
-                            lable.textColor = textColor
+                            label.textColor = textColor
                         }
                         
                     }

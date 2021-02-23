@@ -52,7 +52,7 @@ class UserTableViewCell:UITableViewCell{
         return button
     }()
     
-    lazy var userNameLable:UILabel = {
+    lazy var userNameLabel:UILabel = {
        let lable = UILabel()
         lable.translatesAutoresizingMaskIntoConstraints = false
         lable.font = UIFont.boldSystemFont(ofSize: 15)
@@ -87,10 +87,10 @@ class UserTableViewCell:UITableViewCell{
         
         profileImageView.layer.cornerRadius = 48 / 2
         
-        addSubview(userNameLable)
+        addSubview(userNameLabel)
         
-        userNameLable.leftAnchor.constraint(equalTo: profileImageView.rightAnchor,constant: 15).isActive = true
-        userNameLable.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        userNameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor,constant: 15).isActive = true
+        userNameLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         
         addSubview(followButton)
         followButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true

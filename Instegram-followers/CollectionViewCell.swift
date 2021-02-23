@@ -81,11 +81,11 @@ extension CollectionViewCell: UITableViewDelegate, UITableViewDataSource{
             
             if usersType == "followers"{
                 cell.profileImageView.image =  UIImage(named: followers[indexPath.row ])!
-                cell.userNameLable.text = followers[indexPath.row]
+                cell.userNameLabel.text = followers[indexPath.row]
                 cell.followers = true
             }else{
                 cell.followers = false
-                cell.userNameLable.text = following[indexPath.row]
+                cell.userNameLabel.text = following[indexPath.row]
                 cell.profileImageView.image =  UIImage(named: following[indexPath.row ])!
             }
         }

@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
         
        let segmentedButtonsView = SegmentedButtonsView()
         
-        segmentedButtonsView.setLablesTitles(titles: ["Followers", "Following"])
+        segmentedButtonsView.setLabelsTitles(titles: ["Followers", "Following"])
         segmentedButtonsView.translatesAutoresizingMaskIntoConstraints = false
         segmentedButtonsView.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
         segmentedButtonsView.layer.borderColor = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 1).cgColor
