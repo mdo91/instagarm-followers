@@ -17,10 +17,7 @@ protocol SegmentedControlDelegate:class{
 }
 
 class SegmentedButtonsView:UIView, CollectionViewDidScrollDelegate{
- 
-  
-   
-    
+
     //MARK: - properties
     
     lazy var selectorView = UIView()
@@ -30,8 +27,6 @@ class SegmentedButtonsView:UIView, CollectionViewDidScrollDelegate{
     var selectorTextColor = UIColor.black
     public private(set) var selectedIndex: Int = 0
 
-    
-    weak var delegate: CollectionViewDidScrollDelegate?
     weak var segmentedControlDelegate: SegmentedControlDelegate?
     
     convenience init(frame: CGRect, titles: [String]) {
@@ -40,8 +35,6 @@ class SegmentedButtonsView:UIView, CollectionViewDidScrollDelegate{
     }
     
 
-    
-    
     //MARK: - config selected Tap
     
     private func configSelectedTap(){
@@ -55,7 +48,7 @@ class SegmentedButtonsView:UIView, CollectionViewDidScrollDelegate{
     //MARK: - updateView
     
     private func updateView(){
-        createLables()
+        createLabels()
         configSelectedTap()
         configStackView()
     }
@@ -69,7 +62,7 @@ class SegmentedButtonsView:UIView, CollectionViewDidScrollDelegate{
     
     //MARK: - create lables
     
-    private func createLables(){
+    private func createLabels(){
         
         lables.removeAll()
         subviews.forEach({$0.removeFromSuperview()})
@@ -112,7 +105,6 @@ class SegmentedButtonsView:UIView, CollectionViewDidScrollDelegate{
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         stackView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         stackView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-       
         
     }
     
