@@ -2,7 +2,7 @@
 ---------------------------------------------
 The ios app demonstrates animated segmented buttons that are integrated with collectionView instagram-like followers/following screen.
 
-![alt text](https://github.com/mdo91/instagarm-followers/blob/main/resources/mdo01.gif). 
+![alt text](https://github.com/mdo91/instagarm-followers/blob/main/resources/md01.gif). 
 
 ### usage:
 
