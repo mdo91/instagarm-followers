@@ -21,11 +21,11 @@ For the functionality that is demonstrated above, there are two main classes:
 ```swift
 lazy var segmentedButtonsView:SegmentedButtonsView = {
    let segmentedButtonsView = SegmentedButtonsView()
-    segmentedButtonsView.setLablesTitles(titles: ["Followers", "Following"])
+    segmentedButtonsView.setLabelsTitles(titles: ["Followers", "Following"])
     return collectionViewHeader
 }()
 ```
-Please consider to call 'setLablesTitles' method of 'SegmentedButtonsView' instance in order to set lables titles.
+Please consider to call 'setLabelsTitles' method of 'SegmentedButtonsView' instance in order to set labels titles.
 In your viewController make it conforms to 'SegmentedControlDelegate' in order to trigger selected button index:
 
 ```swift
@@ -49,24 +49,24 @@ extension MainViewController: SegmentedControlDelegate{
 If you're willing to use segmentedViewButtons to be integrated with a collection view with more than 2 buttons, you can replace the code inside the 'collectionViewDidScroll' delegate function of 'SegmentedButtonsView.swift' :
 
 ```swift
-if  (lable.frame.width / 2  >= self.selectorView.frame.origin.x && titles[0] == lable.text! ||
-     lable.frame.width / 2  <= self.selectorView.frame.origin.x && titles[1] == lable.text! ) {
+if  (label.frame.width / 2  >= self.selectorView.frame.origin.x && titles[0] == label.text! ||
+     label.frame.width / 2  <= self.selectorView.frame.origin.x && titles[1] == label.text! ) {
                             
-      lable.textColor = selectorTextColor
+      label.textColor = selectorTextColor
                             
     }else{
 
-        lable.textColor = textColor
+        label.textColor = textColor
 }
 
 ```
-with the following code that supports more than two buttons(lables) view:
+with the following code that supports more than two buttons(labeLs) view:
 
 ```swift
-if lable.frame.origin.x == self.selectorView.frame.origin.x{
-    lable.textColor = selectorTextColor
+if label.frame.origin.x == self.selectorView.frame.origin.x{
+    label.textColor = selectorTextColor
 }else{
-    lable.textColor = textColor
+    label.textColor = textColor
 }
 ```
 
