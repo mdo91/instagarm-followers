@@ -69,6 +69,10 @@ if label.frame.origin.x == self.selectorView.frame.origin.x{
     label.textColor = textColor
 }
 ```
+Sponsor 💜: if you think you made a good use of the code, feel free to donate
+USDT deposit address: TCXjSq5bRNPjgc27QGbJdx3Wj6CdjBoHHK
+Network Tron
+
 
 
 
