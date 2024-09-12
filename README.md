@@ -29,7 +29,7 @@ Please consider to call 'setLabelsTitles' method of 'SegmentedButtonsView' insta
 In your viewController make it conforms to 'SegmentedControlDelegate' in order to trigger selected button index:
 
 ```swift
-extension MainViewController: SegmentedControlDelegate{
+extension MainViewController: SegmentedControlDelegate {
 
     //MARK: - segmented Control delegate
     
@@ -54,7 +54,7 @@ if  (label.frame.width / 2  >= self.selectorView.frame.origin.x && titles[0] == 
                             
       label.textColor = selectorTextColor
                             
-    }else{
+    }else {
 
         label.textColor = textColor
 }
@@ -63,9 +63,9 @@ if  (label.frame.width / 2  >= self.selectorView.frame.origin.x && titles[0] == 
 with the following code that supports more than two buttons(labeLs) view:
 
 ```swift
-if label.frame.origin.x == self.selectorView.frame.origin.x{
+if label.frame.origin.x == self.selectorView.frame.origin.x {
     label.textColor = selectorTextColor
-}else{
+} else {
     label.textColor = textColor
 }
 ```
